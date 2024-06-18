@@ -57,7 +57,6 @@ export type Tag =
   | 'path'
   | 'polyline'
   | 'polygon'
-  | 'path'
   | 'rect'
   | 'circle'
   | 'ellipse'

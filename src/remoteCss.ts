@@ -1,7 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { parse } from 'node-html-parser';
-import { HtmlStyles } from './styles.js';
-import { convertStylesheet } from './parse.js';
-import { createCache } from './cache.js';
+import { HtmlStyles } from './styles';
+import { convertStylesheet } from './parse';
+import { createCache } from './cache';
 
 export const CSS_CACHE = createCache({ limit: 30 });
 

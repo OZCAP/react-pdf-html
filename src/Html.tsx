@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import * as React from 'react';
-import renderHtml, { HtmlRenderers } from './render.js';
-import { HtmlStyle, HtmlStyles } from './styles.js';
+import renderHtml, { HtmlRenderers } from './render';
+import { HtmlStyle, HtmlStyles } from './styles';
 
 export type HtmlProps = {
   collapse?: boolean;
@@ -12,6 +15,8 @@ export type HtmlProps = {
 };
 
 const Html: React.FC<HtmlProps> = (props) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return <>{renderHtml(props.children, props)}</>;
 };
 

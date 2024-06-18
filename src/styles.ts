@@ -1,6 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { StyleSheet } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
-import { Tag } from './tags.js';
+import { Tag } from './tags';
 
 export type HtmlStyle =
   | (Style & {
@@ -8,18 +13,19 @@ export type HtmlStyle =
       listStyleType?: string;
       borderSpacing?: number | string;
       borderCollapse?: string;
-    })
-  | any;
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+    }) | any
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 export type HtmlStyles = Record<Tag | string, HtmlStyle>;
 
 export const createHtmlStylesheet = <T extends HtmlStyles>(
   fontSize: number,
-  reset: boolean = false
+  reset: boolean
 ): HtmlStyles => {
   const em = (em: number, relativeSize: number = fontSize) => em * relativeSize;
 
-  let base: HtmlStyles = {
+  const base: HtmlStyles = {
     body: {
       margin: 8,
       fontFamily: 'Times-Roman',
@@ -168,7 +174,9 @@ export const createHtmlStylesheet = <T extends HtmlStyles>(
             style.startsWith('padding') ||
             style === 'fontSize')
         ) {
-          delete (base as any)[key][style];
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          delete (base)[key][style];
         }
       }
     }

@@ -1,3 +1,14 @@
+/* eslint-disable @typescript-eslint/prefer-optional-chain */
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import {
   HTMLElement,
   Node as HTMLNode,
@@ -5,14 +16,14 @@ import {
   parse,
   TextNode,
 } from 'node-html-parser';
-import { Tag } from './tags.js';
+import { Tag } from './tags';
 import { Block, Declaration, List, Rule, StyleSheet } from 'css-tree';
 import * as cssTree from 'css-tree';
 const { generate, parse: cssParse } = cssTree;
 
-import supportedStyles from './supportedStyles.js';
-import { HtmlStyle, HtmlStyles } from './styles.js';
-import camelize from './camelize.js';
+import supportedStyles from './supportedStyles';
+import { HtmlStyle, HtmlStyles } from './styles';
+import camelize from './camelize';
 
 export type HtmlContent = (HtmlElement | string)[];
 

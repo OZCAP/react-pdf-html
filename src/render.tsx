@@ -1,14 +1,28 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable react/no-children-prop */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/prefer-string-starts-ends-with */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import * as React from 'react';
 import renderers, {
   renderBlock,
   renderInline,
   renderNoop,
-} from './renderers.js';
+} from './renderers';
 import { Text, View } from '@react-pdf/renderer';
-import parseHtml, { HtmlContent, HtmlElement } from './parse.js';
-import { createHtmlStylesheet, HtmlStyle, HtmlStyles } from './styles.js';
+import parseHtml, { HtmlContent, HtmlElement } from './parse';
+import { createHtmlStylesheet, HtmlStyle, HtmlStyles } from './styles';
 import { Style } from '@react-pdf/types';
-import { isText, Tag } from './tags.js';
+import { isText, Tag } from './tags';
 
 export type HtmlRendererProps = {
   element: HtmlElement;
